@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-content>
+    <form class="form" [formGroup]="registerForm">
+      <mat-form-field appearance="outline" class="form-control">
+        <mat-label>Your Email</mat-label>
+        <input matInput type="text" formControlName="email" />
+        <mat-error></mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-control">
+        <mat-label>Your Password</mat-label>
+        <input matInput type="" formControlName="password" />
+      </mat-form-field>
+      <div class="form-footer">
+        <button mat-button (click)="CreateUser()">Create a User</button>
+        <a routerLink="/login">Go to Login</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
