@@ -5,7 +5,7 @@
             <input placeholder="{{action }} Word" matInput [(ngModel)]="dialogData.Word"/>
         </mat-form-field>
         <mat-form-field>
-            <mat-select [(value)]="dialogData.Rating">
+            <mat-select [(ngModel)]="dialogData.Rating">
                 <mat-option *ngFor="let key of keys" [value]="key.value">{{ key.rating}}</mat-option>
             </mat-select>
         </mat-form-field>

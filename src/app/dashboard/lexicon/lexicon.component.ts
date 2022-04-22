@@ -667,6 +667,7 @@ export class LexiconComponent implements OnInit, AfterViewInit {
   public openDialog(action: string, obj: any) {
     obj.action = action;
     obj.keys = this.keys;
+    obj.Rating = obj.Rating.toString();
     console.log(obj);
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '300px',

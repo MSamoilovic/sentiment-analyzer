@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export interface UserData {
   action?: string;
   Word: string;
-  Rating: number;
+  Rating: string;
   keys? : {rating: string, value: string}[]
 }
 
@@ -29,7 +29,7 @@ export class DialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.keys);
+    
   }
 
   doAction() {
