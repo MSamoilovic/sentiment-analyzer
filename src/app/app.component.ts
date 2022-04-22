@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './shared/services/auth-service.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import data from '../../dataSeed'
-
 
 @Component({
   selector: 'app-root',
@@ -14,7 +12,6 @@ import data from '../../dataSeed'
 export class AppComponent implements OnInit {
   title = 'sentiment-analyzer';
   isLoggedIn$: Observable<boolean>;
-  seedData = data;
 
   constructor(private auth: AuthService, private router: Router, private db: AngularFirestore) {}
 
@@ -26,8 +23,4 @@ export class AppComponent implements OnInit {
     this.auth.Logout();
     this.router.navigate(['/login']);
   }
-
-  // SeedData() {
-  //   this.seedData.forEach(res => this.db.collection('Words').add(res));
-  // }
 }

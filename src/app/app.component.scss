@@ -1,8 +1,9 @@
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 5em;
     height: 100%;
     width: 100%;
 }

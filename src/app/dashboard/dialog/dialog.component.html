@@ -1,0 +1,20 @@
+<h3 mat-dialog-title> <strong>{{action}}</strong> Word</h3>
+<div mat-dialog-content>
+    <div *ngIf="action != 'Delete'; else deleteTemplate">
+        <mat-form-field>
+            <input placeholder="{{action }} Word" matInput [(ngModel)]="dialogData.Word"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select [(value)]="dialogData.Rating">
+                <mat-option *ngFor="let key of keys" [value]="key.value">{{ key.rating}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <ng-template #deleteTemplate>
+        Sure to delete <b>{{ dialogData.Word }}</b>
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="doAction()">{{action}}</button>
+    <button mat-button mat-flat-button color="warn" (click)="closeDialog()">Cancel</button>
+</div>
