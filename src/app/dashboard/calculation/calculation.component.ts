@@ -28,7 +28,8 @@ export class CalculationComponent implements OnInit {
 
   openTextDialog() {
    const textDialogRef = this.dialog.open(TextDialogComponent, {
-     width: '600px',
+     width: '300px',
+     height: '250px',
      autoFocus: true
    })
 
@@ -37,7 +38,8 @@ export class CalculationComponent implements OnInit {
 
   openFileDialog() {
     const fileDialogRef = this.dialog.open(FileDialogComponent, {
-      width: '300px'
+      width: '300px',
+      height: '250px'
     })
 
     fileDialogRef.afterClosed().subscribe(res => this.dataToAnalyze = res.data);
