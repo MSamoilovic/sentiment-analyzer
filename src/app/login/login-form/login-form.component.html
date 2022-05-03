@@ -1,19 +1,44 @@
 <mat-card>
-    <mat-card-content>
-        <form class="form" [formGroup]="loginForm">
-            <mat-form-field appearance="outline" class="form-control">
-                <mat-label>Your Email</mat-label>
-                <input matInput type="text" formControlName="email" />
-                <mat-error *ngIf="loginForm.controls['email'].hasError('required')">Email is required</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="form-control">
-                <mat-label>Your Password</mat-label>
-                <input matInput type="text" formControlName="password" />
-            </mat-form-field>
-            <div class="form-footer">
-                <button mat-button (click)="Login()">Login</button>
-                <a routerLink="/register">Create new user</a>
-            </div>
-        </form>
-    </mat-card-content>
+  <mat-card-title>
+    <h3 class="mat-card-headline">Login</h3>
+  </mat-card-title>
+  <mat-card-content>
+    <form class="form" [formGroup]="loginForm">
+      <mat-form-field appearance="outline" class="form-control">
+        <mat-label>Your Email</mat-label>
+        <input matInput type="text" formControlName="email" />
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required')"
+          >Email is required</mat-error
+        >
+        <mat-error
+          *ngIf="
+            loginForm.controls['email'].hasError('email') &&
+            !loginForm.controls['email'].hasError('required')
+          "
+          >Email must be in correct format</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-control">
+        <mat-label>Your Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error
+          *ngIf="loginForm.controls['password'].hasError('required')"
+          >Password is required</mat-error
+        >
+        <mat-error
+          *ngIf="
+            loginForm.controls['password'].hasError('minlength') &&
+            !loginForm.controls['password'].hasError('required')
+          "
+          >Password must be atleast 6 characters long</mat-error
+        >
+      </mat-form-field>
+      <div class="form-footer">
+        <button mat-button mat-raised-button color="primary" (click)="Login()">
+          Login
+        </button>
+        <a routerLink="/register">Create new user</a>
+      </div>
+    </form>
+  </mat-card-content>
 </mat-card>

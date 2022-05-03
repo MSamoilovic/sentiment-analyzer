@@ -1,0 +1,26 @@
+<h3 mat-dialog-title>Upload Text-file for analysis</h3>
+<div mat-dialog-content>
+  <input
+    type="file"
+    class="file-input"
+    (change)="onFileSelected($event)"
+    accept=".txt"
+    #fileUpload
+  />
+  <div class="file-upload">
+    {{ fileName || "No File selected" }}
+
+    <button
+      mat-mini-fab
+      color="primary"
+      class="upload-btn"
+      (click)="fileUpload.click()"
+    >
+      <mat-icon>attach_file</mat-icon>
+    </button>
+  </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="doAction()">Save Text</button>
+    <button mat-button mat-flat-button color="warn" (click)="closeDialog()">Cancel</button>
+</div>

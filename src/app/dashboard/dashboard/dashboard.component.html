@@ -1,8 +1,8 @@
 <mat-tab-group>
     <mat-tab label="Lexicon">
-        <app-lexicon></app-lexicon>
+        <app-lexicon [lexiconData]="data"></app-lexicon>
     </mat-tab>
     <mat-tab label="Calculation">
-        <app-calculation></app-calculation>
+        <app-calculation [lexiconData]="data"></app-calculation>
     </mat-tab>
 </mat-tab-group>

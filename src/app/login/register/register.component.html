@@ -1,17 +1,63 @@
 <mat-card>
+  <mat-card-title>
+    <h3 class="mat-card-headline">Register</h3>
+  </mat-card-title>
   <mat-card-content>
     <form class="form" [formGroup]="registerForm">
       <mat-form-field appearance="outline" class="form-control">
         <mat-label>Your Email</mat-label>
         <input matInput type="text" formControlName="email" />
-        <mat-error></mat-error>
+        <mat-error *ngIf="registerForm.controls['email'].hasError('required')"
+          >Email is required</mat-error
+        >
+        <mat-error
+          *ngIf="
+            registerForm.controls['email'].hasError('email') &&
+            !registerForm.controls['email'].hasError('required')
+          "
+          >Email must be in correct format</mat-error
+        >
       </mat-form-field>
       <mat-form-field appearance="outline" class="form-control">
         <mat-label>Your Password</mat-label>
-        <input matInput type="" formControlName="password" />
+        <input matInput type="password" formControlName="password" />
+        <mat-error
+          *ngIf="registerForm.controls['password'].hasError('required')"
+          >Password is required</mat-error
+        >
+        <mat-error
+          *ngIf="
+            registerForm.controls['password'].hasError('minlength') &&
+            !registerForm.controls['password'].hasError('required')
+          "
+          >Password must be atleast 6 characters long</mat-error
+        >
       </mat-form-field>
+      <mat-form-field appearance="outline" class="form-control">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" />
+        <mat-error
+          *ngIf="registerForm.controls['confirmPassword'].hasError('required')"
+          >Confirm Password is required</mat-error
+        >
+        <mat-error
+          *ngIf="
+            registerForm.controls['confirmPassword'].hasError('mustMatch') &&
+            !registerForm.controls['confirmPassword'].hasError('required')
+          "
+          >Passwords must match</mat-error
+        >
+      </mat-form-field>
+
       <div class="form-footer">
-        <button mat-button (click)="CreateUser()">Create a User</button>
+        <button
+          mat-button
+          mat-raised-button
+          color="primary"
+          (click)="CreateUser()"
+        >
+          Create a User
+        </button>
         <a routerLink="/login">Go to Login</a>
       </div>
     </form>

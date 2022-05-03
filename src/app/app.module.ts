@@ -13,10 +13,12 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatTableModule} from '@angular/material/table'
 import { CdkColumnDef } from '@angular/cdk/table';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     LoginModule,
     MatTableModule,
     DashboardModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
   ],
   providers: [CdkColumnDef],
   bootstrap: [AppComponent]

@@ -1,0 +1,53 @@
+:host {
+  padding-left: 16px;
+  width: 80%;
+  height: 100%;
+}
+
+.calculation-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  display: block;
+}
+
+.calculation-button-group {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding: 16px 0;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.text-box {
+  width: 600px;
+  height: 200px;
+
+  &-field {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #cccccc;
+    padding: 16px;
+    border-radius: 5px;
+    overflow: auto;
+    margin: 0;
+  }
+}
+
+.analyzer-container {
+  margin-top: 3rem;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

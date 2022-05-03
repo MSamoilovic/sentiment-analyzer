@@ -1,8 +1,47 @@
 :host {
-    padding-left: 16px;
-    width: 80%;
+  padding-left: 16px;
+  width: 80%;
+}
+
+.lexicon-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  display: block;
 }
 
 table {
-    width: 100%;
+  width: 100%;
+}
+
+.table-filter-container {
+    width: 320px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 0;
+}
+
+.action-cell {
+  display: flex;
+  width: 30%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  vertical-align: baseline;
+
+  mat-icon, span {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
 }

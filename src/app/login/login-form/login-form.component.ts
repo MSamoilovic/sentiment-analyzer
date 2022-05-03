@@ -22,8 +22,13 @@ export class LoginFormComponent implements OnInit {
   }
 
   Login() {
+
+    if(this.loginForm.invalid) {
+      return ;
+    }
+
     const {email, password} = this.loginForm.value;
-    this.auth.Signin(email, password).then(res => this.router.navigate(['']))
+    this.auth.Signin(email, password).then(res => this.router.navigate(['/dashboard']))
     console.log(email, password);
   }
 

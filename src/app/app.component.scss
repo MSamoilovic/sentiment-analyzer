@@ -1,13 +1,29 @@
-main {
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.app-container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 5em;
+    padding-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     height: 100%;
     width: 100%;
 }
 
-.example-spacer {
-    flex: 1 1 auto;
+.logout-button {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    vertical-align: middle;
+    width: 100px;
+    vertical-align: middle;
+    text-align: center;
+
+    mat-icon {
+        vertical-align: middle;
+    }
 }

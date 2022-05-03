@@ -2,9 +2,9 @@
   <mat-toolbar color="primary">
     <span>Sentiment Analyzer</span>
     <span class="example-spacer"></span>
-    <button *ngIf="isLoggedIn$ | async" mat-button mat-raised (click)="Signout()"><mat-icon>logout</mat-icon>Log out</button>
+    <button mat-button mat-raised-button color="warn" class="logout-button" *ngIf="isLoggedIn$ | async" (click)="Signout()"><mat-icon>logout</mat-icon>Log out</button>
   </mat-toolbar>
 </header>
-<main>
+<main class="app-container">
   <router-outlet></router-outlet>
 </main>

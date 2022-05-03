@@ -14,6 +14,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { TextDialogComponent } from './text-dialog/text-dialog.component';
+import { FileDialogComponent } from './file-dialog/file-dialog.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { SafeHtmlPipe } from '../shared/pipes/safe-html.pipe';
 
 
 
@@ -22,7 +26,10 @@ import { MatInputModule } from '@angular/material/input';
     DashboardComponent,
     LexiconComponent,
     CalculationComponent,
-    DialogComponent
+    DialogComponent,
+    TextDialogComponent,
+    FileDialogComponent,
+    SafeHtmlPipe
   ],
   imports: [
     CommonModule,
@@ -35,7 +42,8 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule,
   ],
   exports: [
     LexiconComponent

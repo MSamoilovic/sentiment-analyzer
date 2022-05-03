@@ -1,1 +1,19 @@
-<p>calculation works!</p>
+<h3 class="calculation-header">Calculation</h3>
+<div class="calculation-button-group">
+    <div>
+        <button mat-button mat-raised-button color="primary" (click)="openTextDialog()">Enter Text</button>
+        <button mat-button mat-raised-button (click)="openFileDialog()">Enter File</button>
+    </div>
+    <div>
+        <button mat-button mat-raised-button color="warn" (click)="clearAnalyzerData()"><mat-icon>delete</mat-icon>Clear</button>
+    </div>
+</div>
+<div>
+    <p>Score: <span [ngClass]="{'red': score < 0, 'green': score > 0}">{{score}}</span></p>
+</div>
+<div class="text-box">
+     <p class="text-box-field" [innerHtml]="dataToAnalyze | safeHtml"></p>  
+</div>
+<div class="analyzer-container">
+    <button mat-button mat-raised-button color="primary" (click)="analyzeData(this.dataToAnalyze)">Analyze</button>
+</div>
