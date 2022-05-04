@@ -20,11 +20,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.isLoggedIn$ = this.auth.isLoggedIn();
     this.isAuthenticated = this.isLoggedIn$.subscribe((res) => {
       if (res) {
-        let isDataPresent = JSON.parse(localStorage.getItem('lexicon') || '');
-
-        if (!isDataPresent) {
-          localStorage.setItem('lexicon', JSON.stringify(lexicon));
-        }
+        
+        localStorage.setItem('lexicon', JSON.stringify(lexicon));
       }
     });
   }
